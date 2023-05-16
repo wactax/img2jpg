@@ -23,7 +23,7 @@ ROOT = dirname(uridir(import.meta));
 
 test('img → jpg', async(t) => {
   var r;
-  r = (await imgJpg(readFileSync(join(ROOT, '1.avif')), 'avif', 0.8)); // https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
+  r = (await imgJpg(readFileSync(join(ROOT, '1.avif')), 'avif', 80)); // https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
   write(join(ROOT, '1.jpg'), r);
   t.true(r instanceof Buffer);
 });

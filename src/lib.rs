@@ -30,6 +30,7 @@ fn _img_jpg(pkg: &Pkg) -> anyhow::Result<Buffer> {
   let guessed;
   let format;
 
+  dbg!(&pkg.ext);
   #[allow(clippy::never_loop)]
   loop {
     if let Some(ext) = &pkg.ext {

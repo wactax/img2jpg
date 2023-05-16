@@ -12,9 +12,9 @@ napi-derive = "2.12.5"
 
 [dependencies.image]
 version = "0.24.6"
-features = ["jpeg", "avif-decoder"]
-default-features = false
+features = ["jpeg", "avif"]
 
+#default-features = false
 [build-dependencies]
 napi-build = "2.0.1"
 
