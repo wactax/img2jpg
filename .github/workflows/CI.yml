@@ -29,7 +29,6 @@ jobs:
               if ! [ -x "$(command -v realpath)" ]; then
                 brew install coreutils
               fi
-              brew install yasm
               yarn build
           - host: windows-latest
             build: yarn build
@@ -91,6 +90,7 @@ jobs:
     name: stable - ${{ matrix.settings.target }} - node@20
     runs-on: ${{ matrix.settings.host }}
     steps:
+      - uses: ilammy/setup-nasm@v1
       - uses: actions/checkout@v3
         with:
           submodules: true 
