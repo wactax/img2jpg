@@ -1,6 +1,6 @@
 {
   "name": "@w5/img2jpg",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "exports": {
     ".": {
