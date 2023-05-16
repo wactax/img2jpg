@@ -9,7 +9,11 @@ crate-type = ["cdylib"]
 [dependencies]
 anyhow = "1.0.71"
 napi-derive = "2.12.5"
-image = "0.24.6"
+
+[dependencies.image]
+version = "0.24.6"
+features = ["jpeg", "avif-decoder"]
+default-features = false
 
 [build-dependencies]
 napi-build = "2.0.1"

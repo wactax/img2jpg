@@ -1,5 +1,5 @@
 // use image::EncodableLayout;
-use image::{jpeg::JpegEncoder, ImageFormat};
+use image::{codecs::jpeg::JpegEncoder, ColorType, ImageFormat};
 use napi::{
   bindgen_prelude::{AsyncTask, Buffer},
   Env, Result, Task,
@@ -8,7 +8,7 @@ use napi_derive::napi;
 
 struct Pkg {
   bin: Buffer,
-  quality: f32,
+  quality: u8,
   ext: Option<String>,
 }
 
@@ -24,6 +24,7 @@ impl Task for Pkg {
     Ok(output)
   }
 }
+
 fn _img_jpg(pkg: &Pkg) -> anyhow::Result<Buffer> {
   let bin = &pkg.bin;
   let guessed;
@@ -53,20 +54,14 @@ fn _img_jpg(pkg: &Pkg) -> anyhow::Result<Buffer> {
     }
   };
 
-  let mut bytes: Vec<u8> = Vec::new();
-  let mut encoder = JpegEncoder::new_with_quality(&mut std::io::stdout(), pkg.quality);
-  encoder.encode(
-    &img.as_bytes(),
-    img.width(),
-    img.height(),
-    ImageOutputFormat::Jpeg,
-  )?;
-  bytes.into()
+  let mut bytes = Vec::new();
+  let mut encoder = JpegEncoder::new_with_quality(&mut bytes, pkg.quality);
+  encoder.encode(&img.as_bytes(), img.width(), img.height(), ColorType::Rgb8)?;
+  Ok(bytes.into())
 }
 
 #[allow(dead_code)]
 #[napi]
-fn img_jpg(bin: Buffer, ext: Option<String>, quality: f64) -> AsyncTask<Pkg> {
-  let quality = quality as f32;
+fn img_jpg(bin: Buffer, ext: Option<String>, quality: u8) -> AsyncTask<Pkg> {
   AsyncTask::new(Pkg { bin, quality, ext })
 }

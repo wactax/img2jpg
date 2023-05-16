@@ -1,5 +1,16 @@
 
-  [32m✔[39m img → jpg [90m[2m(245ms)[22m[39m
+  [31m✘ [fail]:[39m img → jpg [3m[31mRejected promise returned by test[39m[23m
   [90m─[39m
 
-  [32m1 test passed[39m
+  [1mimg → jpg[22m
+
+  Rejected promise returned by test. Reason:
+
+  [35mError[39m [90m{[39m
+    code: [34m'[39m[34mGenericFailure[39m[34m'[39m[90m,[39m
+    message: [34m'[39m[34mThe image format could not be determined[39m[34m'[39m[90m,[39m
+  [90m}[39m
+
+  [90m─[39m
+
+  [31m1 test failed[39m
