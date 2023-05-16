@@ -12,7 +12,6 @@ if ! [ -x "$(command -v sponge)" ]; then
   apt-get install -y moreutils
 fi
 jq -c ".version = $(cat package.json|jq .version)" $out | sponge $out
-mv .t npm/linux-arm64-gnu/package.json
 cd npm/linux-arm64-gnu
 npm publish --access=public
 git checkout .
