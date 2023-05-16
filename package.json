@@ -1,6 +1,6 @@
 {
   "name": "@w5/img2jpg",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "exports": {
     ".": {
@@ -18,10 +18,8 @@
         "aarch64-unknown-linux-gnu",
         "aarch64-unknown-linux-musl",
         "aarch64-pc-windows-msvc",
-        "armv7-unknown-linux-gnueabihf",
         "x86_64-unknown-linux-musl",
         "x86_64-unknown-freebsd",
-        "armv7-linux-androideabi",
         "universal-apple-darwin"
       ]
     }
