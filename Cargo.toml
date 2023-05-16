@@ -1,0 +1,34 @@
+[package]
+edition = "2021"
+name = "w5_img2jxl"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0.71"
+napi-derive = "2.12.5"
+image = "0.24.6"
+# jpegxl-sys = "0.8.1"
+# jpegxl-rs = "0.8.1"
+jpegxl-sys = { path = "./lib/jpegxl-rs/jpegxl-sys" }
+jpegxl-rs = { path = "./lib/jpegxl-rs/jpegxl-rs" }
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
+opt-level = 3
+incremental = true
+codegen-units = 1
+overflow-checks = false
+panic = 'abort'
+debug-assertions = false
+strip = true
+
+[dependencies.napi]
+version = "2.12.6"
+default-features = false
+features = ["napi8", "error_anyhow"]
