@@ -1,6 +1,7 @@
 img/*.jpg
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
+ bun.lockb
 
 ### Node ###
 # Logs
@@ -188,7 +189,7 @@ $RECYCLE.BIN/
 Cargo.lock
 
 .pnp.*
-
+.yarn/*.gz
+.yarn/cache/
+sh/.yarn/*
 *.node
-
-.yarn/

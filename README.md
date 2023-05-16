@@ -48,12 +48,9 @@ test(
 output :
 
 ```
-yarn run v1.22.19
-$ ava
 
-  ✔ img → jpg (6.5s)
+  ✔ img → jpg (6.6s)
   ─
 
   1 test passed
-Done in 6.88s.
 ```
