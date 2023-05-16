@@ -1,1 +1,5 @@
 
+  ✔ img → jpg (7s)
+  ─
+
+  1 test passed

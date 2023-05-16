@@ -24,20 +24,22 @@ pnpm i -g @w5/img2jpg
   fs > readFileSync
 
 ROOT = dirname uridir import.meta
+IMG = join ROOT, 'img'
 
 test(
   'img → jpg'
   (t) =>
-    r = await imgJpg(
-      readFileSync join ROOT, 'logo.webp'
-      'webp'
-      1.0 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
-    )
-    write(
-      join(ROOT, 'logo.jpg')
-      r
-    )
-    t.true(r instanceof Buffer)
+    for img from ['rgba16','rgb8','rgb16','rgba8']
+      r = await imgJpg(
+        readFileSync join IMG, img+'.avif'
+        'avif'
+        80 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
+      )
+      write(
+        join(IMG, img+'.jpg')
+        r
+      )
+      t.true(r instanceof Buffer)
     # t.pass()
     return
 )
@@ -47,7 +49,7 @@ output :
 
 ```
 
-  ✔ img → jpg (1.3s)
+  ✔ img → jpg (7s)
   ─
 
   1 test passed
