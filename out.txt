@@ -1,3 +1,8 @@
 yarn run v1.22.19
 $ ava
 
+  ✔ img → jpg (7s)
+  ─
+
+  1 test passed
+Done in 7.36s.
