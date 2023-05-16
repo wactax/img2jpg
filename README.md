@@ -51,9 +51,9 @@ output :
 yarn run v1.22.19
 $ ava
 
-  ✔ img → jpg (7s)
+  ✔ img → jpg (7.1s)
   ─
 
   1 test passed
-Done in 7.36s.
+Done in 7.42s.
 ```

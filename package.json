@@ -1,6 +1,6 @@
 {
   "name": "@w5/img2jpg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "exports": {
     ".": {
@@ -48,7 +48,7 @@
     "timeout": "3m"
   },
   "engines": {
-    "node": ">= 20"
+    "node": ">= 18"
   },
   "scripts": {
     "artifacts": "napi artifacts",
