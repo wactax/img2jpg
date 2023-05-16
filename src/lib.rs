@@ -39,6 +39,7 @@ fn _load(bin: &[u8], ext: Option<&str>) -> anyhow::Result<DynamicImage> {
         let avif = Avif::decode(bin, &Config { threads: 1 })?.convert()?;
         match avif {
           Image::RGB8(avif) => {
+            //dbg!("RGB8");
             let width = avif.width() as u32;
             let height = avif.height() as u32;
             let pxli = avif.pixels();
@@ -52,6 +53,7 @@ fn _load(bin: &[u8], ext: Option<&str>) -> anyhow::Result<DynamicImage> {
             return Ok(img.into());
           }
           Image::RGB16(avif) => {
+            //dbg!("RGB16");
             let width = avif.width() as u32;
             let height = avif.height() as u32;
             let pxli = avif.pixels();
@@ -65,6 +67,7 @@ fn _load(bin: &[u8], ext: Option<&str>) -> anyhow::Result<DynamicImage> {
             return Ok(img.into());
           }
           Image::RGBA8(avif) => {
+            //dbg!("RGBA8");
             let width = avif.width() as u32;
             let height = avif.height() as u32;
             let pxli = avif.pixels();
@@ -94,28 +97,32 @@ fn _load(bin: &[u8], ext: Option<&str>) -> anyhow::Result<DynamicImage> {
             return Ok(img.into());
           }
           Image::RGBA16(avif) => {
+            //dbg!("RGBA16");
             let width = avif.width() as u32;
             let height = avif.height() as u32;
             let pxli = avif.pixels();
             let mut li = Vec::with_capacity(pxli.len() * 3);
+            const bg: u16 = 65535;
+            const bg64: f64 = bg as f64;
+
             for px in pxli {
               if px.a == 0 {
                 li.push(255);
                 li.push(255);
                 li.push(255);
-              } else if px.a == 255 {
+              } else if px.a == bg {
                 li.push((px.r >> 8) as u8);
                 li.push((px.g >> 8) as u8);
                 li.push((px.b >> 8) as u8);
               } else {
-                let a = (px.a as f64) / 255.0;
-                let bg = (1.0 - a) * 255.0;
+                let a = (px.a as f64) / bg64;
+                let pxbg = (1.0 - a) * bg64;
                 let r = px.r as f64;
                 let g = px.g as f64;
                 let b = px.b as f64;
-                li.push(((r * a + bg) as u16 >> 8) as u8);
-                li.push(((g * a + bg) as u16 >> 8) as u8);
-                li.push(((b * a + bg) as u16 >> 8) as u8);
+                li.push(((r * a + pxbg) as u16 >> 8) as u8);
+                li.push(((g * a + pxbg) as u16 >> 8) as u8);
+                li.push(((b * a + pxbg) as u16 >> 8) as u8);
               }
             }
             let img = ImageBuffer::<image::Rgb<u8>, Vec<u8>>::from_raw(width, height, li).unwrap();

@@ -14,7 +14,7 @@ IMG = join ROOT, 'img'
 test(
   'img → jpg'
   (t) =>
-    for img from ['transparency','1']
+    for img from ['rgba16','rgb8','rgb16','rgba8']
       r = await imgJpg(
         readFileSync join IMG, img+'.avif'
         'avif'

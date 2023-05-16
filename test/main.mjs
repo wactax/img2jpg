@@ -25,7 +25,7 @@ IMG = join(ROOT, 'img');
 
 test('img → jpg', async(t) => {
   var img, r, ref;
-  ref = ['transparency', '1'];
+  ref = ['rgba16', 'rgb8', 'rgb16', 'rgba8'];
   for (img of ref) {
     r = (await imgJpg(readFileSync(join(IMG, img + '.avif')), 'avif', 80)); // https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
     write(join(IMG, img + '.jpg'), r);
