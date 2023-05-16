@@ -191,6 +191,4 @@ Cargo.lock
 
 *.node
 
-.yarn/cache/*
-.yarn/*.gz
-!.yarn/releases/yarn-*.cjs
+.yarn/
