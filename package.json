@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl",
+  "name": "@w5/img2jpg",
   "version": "0.0.2",
   "type": "module",
   "exports": {
@@ -8,9 +8,9 @@
     }
   },
   "types": "index.d.ts",
-  "homepage": "https://github.com/wactax/img2jxl.git",
+  "homepage": "https://github.com/wactax/img2jpg.git",
   "napi": {
-    "name": "img2jxl",
+    "name": "img2jpg",
     "triples": {
       "additional": [
         "aarch64-apple-darwin",

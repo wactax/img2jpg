@@ -1,9 +1,9 @@
-# @w5/img2jxl
+# @w5/img2jpg
 
 ## Install
 
 ```
-pnpm i -g @w5/img2jxl
+pnpm i -g @w5/img2jpg
 ```
 
 ## Test

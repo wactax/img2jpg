@@ -1,12 +1,12 @@
 {
-  "name": "@w5/img2jxl-darwin-universal",
+  "name": "@w5/img2jpg-darwin-universal",
   "version": "0.0.0",
   "os": [
     "darwin"
   ],
-  "main": "img2jxl.darwin-universal.node",
+  "main": "img2jpg.darwin-universal.node",
   "files": [
-    "img2jxl.darwin-universal.node"
+    "img2jpg.darwin-universal.node"
   ],
   "license": "MIT",
   "engines": {

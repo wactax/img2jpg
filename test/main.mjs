@@ -1,7 +1,7 @@
 #!/usr/bin/env -S node --loader=@w5/jsext --trace-uncaught --expose-gc --unhandled-rejections=strict --experimental-import-meta-resolve
 var ROOT;
 
-import imgJxl from '../index.js';
+import imgJpg from '../index.js';
 
 import test from 'ava';
 
@@ -21,10 +21,10 @@ import {
 
 ROOT = dirname(uridir(import.meta));
 
-test('img → jxl', async(t) => {
+test('img → jpg', async(t) => {
   var r;
-  r = (await imgJxl(readFileSync(join(ROOT, '1.jpeg')), 'jpeg', 1.0)); // https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JxlEncoderBuilder.html#method.quality
-  write(join(ROOT, '1.jxl'), r);
+  r = (await imgJpg(readFileSync(join(ROOT, '1.avif')), 'avif', 0.8)); // https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
+  write(join(ROOT, '1.jpg'), r);
   t.true(r instanceof Buffer);
 });
 

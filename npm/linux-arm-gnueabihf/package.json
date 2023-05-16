@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl-linux-arm-gnueabihf",
+  "name": "@w5/img2jpg-linux-arm-gnueabihf",
   "version": "0.0.0",
   "os": [
     "linux"
@@ -7,9 +7,9 @@
   "cpu": [
     "arm"
   ],
-  "main": "img2jxl.linux-arm-gnueabihf.node",
+  "main": "img2jpg.linux-arm-gnueabihf.node",
   "files": [
-    "img2jxl.linux-arm-gnueabihf.node"
+    "img2jpg.linux-arm-gnueabihf.node"
   ],
   "license": "MIT",
   "engines": {

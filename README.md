@@ -1,11 +1,11 @@
 [‼️]: ✏️README.mdt
 
-# @w5/img2jxl
+# @w5/img2jpg
 
 ## Install
 
 ```
-pnpm i -g @w5/img2jxl
+pnpm i -g @w5/img2jpg
 ```
 
 ## Test
@@ -15,7 +15,7 @@ pnpm i -g @w5/img2jxl
 ```coffee
 #!/usr/bin/env coffee
 
-> ../index.js:imgJxl
+> ../index.js:imgJpg
   ava:test
   path > join dirname
   @w5/uridir
@@ -26,15 +26,15 @@ pnpm i -g @w5/img2jxl
 ROOT = dirname uridir import.meta
 
 test(
-  'img → jxl'
+  'img → jpg'
   (t) =>
-    r = await imgJxl(
+    r = await imgJpg(
       readFileSync join ROOT, 'logo.webp'
       'webp'
-      1.0 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JxlEncoderBuilder.html#method.quality
+      1.0 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
     )
     write(
-      join(ROOT, 'logo.jxl')
+      join(ROOT, 'logo.jpg')
       r
     )
     t.true(r instanceof Buffer)
@@ -47,7 +47,7 @@ output :
 
 ```
 
-  ✔ img → jxl (1.3s)
+  ✔ img → jpg (1.3s)
   ─
 
   1 test passed

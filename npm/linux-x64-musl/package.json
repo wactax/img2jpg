@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl-linux-x64-musl",
+  "name": "@w5/img2jpg-linux-x64-musl",
   "version": "0.0.0",
   "os": [
     "linux"
@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "img2jxl.linux-x64-musl.node",
+  "main": "img2jpg.linux-x64-musl.node",
   "files": [
-    "img2jxl.linux-x64-musl.node"
+    "img2jpg.linux-x64-musl.node"
   ],
   "license": "MIT",
   "engines": {

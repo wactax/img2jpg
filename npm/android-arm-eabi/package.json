@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl-android-arm-eabi",
+  "name": "@w5/img2jpg-android-arm-eabi",
   "version": "0.0.0",
   "os": [
     "android"
@@ -7,9 +7,9 @@
   "cpu": [
     "arm"
   ],
-  "main": "img2jxl.android-arm-eabi.node",
+  "main": "img2jpg.android-arm-eabi.node",
   "files": [
-    "img2jxl.android-arm-eabi.node"
+    "img2jpg.android-arm-eabi.node"
   ],
   "license": "MIT",
   "engines": {

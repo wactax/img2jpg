@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> ../index.js:imgJxl
+> ../index.js:imgJpg
   ava:test
   path > join dirname
   @w5/uridir
@@ -11,15 +11,15 @@
 ROOT = dirname uridir import.meta
 
 test(
-  'img → jxl'
+  'img → jpg'
   (t) =>
-    r = await imgJxl(
-      readFileSync join ROOT, '1.jpeg'
-      'jpeg'
-      1.0 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JxlEncoderBuilder.html#method.quality
+    r = await imgJpg(
+      readFileSync join ROOT, '1.avif'
+      'avif'
+      0.8 # https://docs.rs/jpegxl-rs/latest/jpegxl_rs/encode/struct.JpgEncoderBuilder.html#method.quality
     )
     write(
-      join(ROOT, '1.jxl')
+      join(ROOT, '1.jpg')
       r
     )
     t.true(r instanceof Buffer)

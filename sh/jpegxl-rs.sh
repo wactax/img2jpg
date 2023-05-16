@@ -14,7 +14,7 @@ if [ ! -d "jpegxl-rs" ]; then
 
 fi
 
-cd jpegxl-rs/jpegxl-src/libjxl
+cd jpegxl-rs/jpegxl-src/libjpg
 ./deps.sh && cmake . -DBUILD_TESTING=OFF && make -j $(nproc) && sudo make install
 rm CMakeCache.txt
 

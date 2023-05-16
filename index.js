@@ -35,24 +35,24 @@ switch (platform) {
   case 'android':
     switch (arch) {
       case 'arm64':
-        localFileExisted = existsSync(join(__dirname, 'img2jxl.android-arm64.node'))
+        localFileExisted = existsSync(join(__dirname, 'img2jpg.android-arm64.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.android-arm64.node')
+            nativeBinding = require('./img2jpg.android-arm64.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-android-arm64')
+            nativeBinding = require('@w5/img2jpg-android-arm64')
           }
         } catch (e) {
           loadError = e
         }
         break
       case 'arm':
-        localFileExisted = existsSync(join(__dirname, 'img2jxl.android-arm-eabi.node'))
+        localFileExisted = existsSync(join(__dirname, 'img2jpg.android-arm-eabi.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.android-arm-eabi.node')
+            nativeBinding = require('./img2jpg.android-arm-eabi.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-android-arm-eabi')
+            nativeBinding = require('@w5/img2jpg-android-arm-eabi')
           }
         } catch (e) {
           loadError = e
@@ -66,13 +66,13 @@ switch (platform) {
     switch (arch) {
       case 'x64':
         localFileExisted = existsSync(
-          join(__dirname, 'img2jxl.win32-x64-msvc.node')
+          join(__dirname, 'img2jpg.win32-x64-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.win32-x64-msvc.node')
+            nativeBinding = require('./img2jpg.win32-x64-msvc.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-win32-x64-msvc')
+            nativeBinding = require('@w5/img2jpg-win32-x64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -80,13 +80,13 @@ switch (platform) {
         break
       case 'ia32':
         localFileExisted = existsSync(
-          join(__dirname, 'img2jxl.win32-ia32-msvc.node')
+          join(__dirname, 'img2jpg.win32-ia32-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.win32-ia32-msvc.node')
+            nativeBinding = require('./img2jpg.win32-ia32-msvc.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-win32-ia32-msvc')
+            nativeBinding = require('@w5/img2jpg-win32-ia32-msvc')
           }
         } catch (e) {
           loadError = e
@@ -94,13 +94,13 @@ switch (platform) {
         break
       case 'arm64':
         localFileExisted = existsSync(
-          join(__dirname, 'img2jxl.win32-arm64-msvc.node')
+          join(__dirname, 'img2jpg.win32-arm64-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.win32-arm64-msvc.node')
+            nativeBinding = require('./img2jpg.win32-arm64-msvc.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-win32-arm64-msvc')
+            nativeBinding = require('@w5/img2jpg-win32-arm64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -111,23 +111,23 @@ switch (platform) {
     }
     break
   case 'darwin':
-    localFileExisted = existsSync(join(__dirname, 'img2jxl.darwin-universal.node'))
+    localFileExisted = existsSync(join(__dirname, 'img2jpg.darwin-universal.node'))
     try {
       if (localFileExisted) {
-        nativeBinding = require('./img2jxl.darwin-universal.node')
+        nativeBinding = require('./img2jpg.darwin-universal.node')
       } else {
-        nativeBinding = require('@w5/img2jxl-darwin-universal')
+        nativeBinding = require('@w5/img2jpg-darwin-universal')
       }
       break
     } catch {}
     switch (arch) {
       case 'x64':
-        localFileExisted = existsSync(join(__dirname, 'img2jxl.darwin-x64.node'))
+        localFileExisted = existsSync(join(__dirname, 'img2jpg.darwin-x64.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.darwin-x64.node')
+            nativeBinding = require('./img2jpg.darwin-x64.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-darwin-x64')
+            nativeBinding = require('@w5/img2jpg-darwin-x64')
           }
         } catch (e) {
           loadError = e
@@ -135,13 +135,13 @@ switch (platform) {
         break
       case 'arm64':
         localFileExisted = existsSync(
-          join(__dirname, 'img2jxl.darwin-arm64.node')
+          join(__dirname, 'img2jpg.darwin-arm64.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.darwin-arm64.node')
+            nativeBinding = require('./img2jpg.darwin-arm64.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-darwin-arm64')
+            nativeBinding = require('@w5/img2jpg-darwin-arm64')
           }
         } catch (e) {
           loadError = e
@@ -155,12 +155,12 @@ switch (platform) {
     if (arch !== 'x64') {
       throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
     }
-    localFileExisted = existsSync(join(__dirname, 'img2jxl.freebsd-x64.node'))
+    localFileExisted = existsSync(join(__dirname, 'img2jpg.freebsd-x64.node'))
     try {
       if (localFileExisted) {
-        nativeBinding = require('./img2jxl.freebsd-x64.node')
+        nativeBinding = require('./img2jpg.freebsd-x64.node')
       } else {
-        nativeBinding = require('@w5/img2jxl-freebsd-x64')
+        nativeBinding = require('@w5/img2jpg-freebsd-x64')
       }
     } catch (e) {
       loadError = e
@@ -171,26 +171,26 @@ switch (platform) {
       case 'x64':
         if (isMusl()) {
           localFileExisted = existsSync(
-            join(__dirname, 'img2jxl.linux-x64-musl.node')
+            join(__dirname, 'img2jpg.linux-x64-musl.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./img2jxl.linux-x64-musl.node')
+              nativeBinding = require('./img2jpg.linux-x64-musl.node')
             } else {
-              nativeBinding = require('@w5/img2jxl-linux-x64-musl')
+              nativeBinding = require('@w5/img2jpg-linux-x64-musl')
             }
           } catch (e) {
             loadError = e
           }
         } else {
           localFileExisted = existsSync(
-            join(__dirname, 'img2jxl.linux-x64-gnu.node')
+            join(__dirname, 'img2jpg.linux-x64-gnu.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./img2jxl.linux-x64-gnu.node')
+              nativeBinding = require('./img2jpg.linux-x64-gnu.node')
             } else {
-              nativeBinding = require('@w5/img2jxl-linux-x64-gnu')
+              nativeBinding = require('@w5/img2jpg-linux-x64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -200,26 +200,26 @@ switch (platform) {
       case 'arm64':
         if (isMusl()) {
           localFileExisted = existsSync(
-            join(__dirname, 'img2jxl.linux-arm64-musl.node')
+            join(__dirname, 'img2jpg.linux-arm64-musl.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./img2jxl.linux-arm64-musl.node')
+              nativeBinding = require('./img2jpg.linux-arm64-musl.node')
             } else {
-              nativeBinding = require('@w5/img2jxl-linux-arm64-musl')
+              nativeBinding = require('@w5/img2jpg-linux-arm64-musl')
             }
           } catch (e) {
             loadError = e
           }
         } else {
           localFileExisted = existsSync(
-            join(__dirname, 'img2jxl.linux-arm64-gnu.node')
+            join(__dirname, 'img2jpg.linux-arm64-gnu.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./img2jxl.linux-arm64-gnu.node')
+              nativeBinding = require('./img2jpg.linux-arm64-gnu.node')
             } else {
-              nativeBinding = require('@w5/img2jxl-linux-arm64-gnu')
+              nativeBinding = require('@w5/img2jpg-linux-arm64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -228,13 +228,13 @@ switch (platform) {
         break
       case 'arm':
         localFileExisted = existsSync(
-          join(__dirname, 'img2jxl.linux-arm-gnueabihf.node')
+          join(__dirname, 'img2jpg.linux-arm-gnueabihf.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./img2jxl.linux-arm-gnueabihf.node')
+            nativeBinding = require('./img2jpg.linux-arm-gnueabihf.node')
           } else {
-            nativeBinding = require('@w5/img2jxl-linux-arm-gnueabihf')
+            nativeBinding = require('@w5/img2jpg-linux-arm-gnueabihf')
           }
         } catch (e) {
           loadError = e
@@ -257,6 +257,6 @@ if (!nativeBinding) {
 
 ;
 export default (img, ext = undefined, quality = 1) =>
-	nativeBinding.imgJxl(img, ext, quality);
+	nativeBinding.imgJpg(img, ext, quality);
 
-export const imgJxl = nativeBinding.imgJxl;
+export const imgJpg = nativeBinding.imgJpg;

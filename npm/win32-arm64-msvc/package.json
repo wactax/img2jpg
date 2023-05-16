@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl-win32-arm64-msvc",
+  "name": "@w5/img2jpg-win32-arm64-msvc",
   "version": "0.0.0",
   "os": [
     "win32"
@@ -7,9 +7,9 @@
   "cpu": [
     "arm64"
   ],
-  "main": "img2jxl.win32-arm64-msvc.node",
+  "main": "img2jpg.win32-arm64-msvc.node",
   "files": [
-    "img2jxl.win32-arm64-msvc.node"
+    "img2jpg.win32-arm64-msvc.node"
   ],
   "license": "MIT",
   "engines": {

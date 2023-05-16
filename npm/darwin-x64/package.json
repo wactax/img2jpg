@@ -1,5 +1,5 @@
 {
-  "name": "@w5/img2jxl-darwin-x64",
+  "name": "@w5/img2jpg-darwin-x64",
   "version": "0.0.0",
   "os": [
     "darwin"
@@ -7,9 +7,9 @@
   "cpu": [
     "x64"
   ],
-  "main": "img2jxl.darwin-x64.node",
+  "main": "img2jpg.darwin-x64.node",
   "files": [
-    "img2jxl.darwin-x64.node"
+    "img2jpg.darwin-x64.node"
   ],
   "license": "MIT",
   "engines": {
