@@ -49,7 +49,7 @@ output :
 
 ```
 
-  ✔ img → jpg (13s)
+  ✔ img → jpg (7s)
   ─
 
   1 test passed
