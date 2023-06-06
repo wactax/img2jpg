@@ -1,5 +1,5 @@
 
-  ✔ img → jpg (7s)
-  ─
+  [32m✔[39m img → jpg [90m[2m(7.1s)[22m[39m
+  [90m─[39m
 
-  1 test passed
+  [32m1 test passed[39m
