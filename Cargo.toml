@@ -8,7 +8,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 anyhow = "1.0.71"
-aom-decode = "0.2.5"
+avif_img = "0.1.1"
 napi-derive = "2.12.5"
 
 [dependencies.image]
