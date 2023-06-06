@@ -1,7 +1,3 @@
-use aom_decode::{
-  avif::{Avif, Image},
-  Config,
-};
 use avif_img::load_image;
 use image::{codecs::jpeg::JpegEncoder, ColorType, DynamicImage, ImageBuffer, ImageFormat};
 use napi::{
