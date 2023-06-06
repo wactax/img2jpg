@@ -1,5 +1,5 @@
 use avif_img::load_image;
-use image::{codecs::jpeg::JpegEncoder, ColorType, DynamicImage, ImageBuffer, ImageFormat};
+use image::{codecs::jpeg::JpegEncoder, ColorType};
 use napi::{
   bindgen_prelude::{AsyncTask, Buffer},
   Env, Result, Task,
